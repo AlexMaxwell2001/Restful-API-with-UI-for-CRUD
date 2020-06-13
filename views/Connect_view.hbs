@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Restful Api with UI for CRUD operation on MongoDB</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/all.css" rel="stylesheet" type="text/css"/>  
+	<link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+	<style>
+		#border
+		{
+			background-color: #42444e;
+			height: 100%;
+			width: 30%;
+			color: white;
+			
+		}
+		#container{
+			height:100%;
+			width:100%;
+		}
+		#clients
+		{
+			top:25%;
+			position:relative;
+			text-align:center;
+		}
+		#therapists{
+			top:40%;
+			position:relative;
+			text-align:center;
+
+		}
+		#sessions{
+			top:55%;
+			position:relative;
+			text-align:center;
+		}
+		body{
+			background-color:#9799a7;
+		}
+		#header1{
+			color:#9799a7;
+			text-align:center;
+			top:80px;
+			position:relative;
+			font-family: 'Orbitron';
+		}
+		.options
+		{
+			font-family: 'Orbitron';
+			cursor:pointer;
+		}
+		.options:hover{
+			color:red;
+		}
+		#p1{
+			top:15%;
+			left:40%;
+			width:800px;
+			height:200px;
+			text-align:center;
+			word-wrap: break-word;
+			overflow:auto;
+			position:absolute;
+			font-family:'Orbitron';
+		}
+		#p2{
+			top:40%;
+			left:40%;
+			width:800px;
+			height:200px;
+			text-align:center;
+			word-wrap: break-word;
+			overflow:auto;
+			position:absolute;
+			font-family:'Orbitron';
+		}
+		#p3{
+			top:70%;
+			left:40%;
+			width:800px;
+			height:200px;
+			text-align:center;
+			word-wrap: break-word;
+			overflow:auto;
+			position:absolute;
+			font-family:'Orbitron';
+		}
+		
+		
+	</style>
+</head>
+<body>
+		<aside id="border">
+			<h3 id="header1" >Choose a Database</h3>
+			<div id="clients"; class="options">Show Clients Database</div>
+			<div id="therapists"; class="options">Show Therapists Database</div>
+			<div id="sessions"; class="options">Show Sessions Database</div>
+		</aside>	
+		<div id="p1">This is an implementation of prototype Client Relationship	Management (CRM)	solution for a hypothetical	Psychotherapy and Counselling Service, this implementation supports the	creation and management of Therapists and Clients personal information.	
+		It also supports for the creation and management of	Therapy	Sessions information. A Therapy Session	is	the	 process of	a client meeting with a	therapist to resolve problematic behaviours, beliefs, feelings and	relationships.	
+		Therapists usually record notes.</div>
+		<div id="p2">
+		For	Clients	and	Therapists you can manage the following	personal information: Personal Details	containing:	Title, First Name(s)*, Surname*, Mobile	Phone*, Home Phone*, Email Address*, and Home Address [Address Line 1*, Address	Line 2,	Town*, County/City*, EIRCODE]. The fields marked * are	
+		required fields, i.e. they	must contain	values.	Additional Personal	Details	for	Clients	including: Date	of Birth*, Parent/Guardian	Name if	under 18*, Permission [Y/N]	to leave message on	Mobile Phone, Home Phone and Email Address*, Date for Record Creation *,Marital	Status [Never Married, Domestic	Partnership, Married, Separated, Divorced, Widowed]*,	
+		and	Referred By	(The name of the referrer).</div>
+		<div id="p3">
+		For	Therapy	Sessions(sessions), you	can	manage	the	following information: Session	Date*, Session Time*, Client(s)*, Therapist*, Fee (€)*,	Session	Number*, Session Duration[Cancelled/No Show]*, Session Type* [Intake, Psychotherapy, Assessment, Other(Specify)], Issue	Flag* [Yes/No], Session	Notes*.	The	fields	marked * are required fields, i.e. they	must contain values.		
+
+		</div>
+<script src="/assets/js/jquery-3.5.0.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script>     
+   $("#clients").on('click',function() {
+            
+        $(location).attr('href', '/'+'Clients');
+    });
+	$("#therapists").on('click',function() {
+            
+        $(location).attr('href', '/'+ 'Therapists');
+    });
+	$("#sessions").on('click',function() {
+            
+        $(location).attr('href', '/'+'Sessions');
+    });
+</script>
+</body>
+</html>
