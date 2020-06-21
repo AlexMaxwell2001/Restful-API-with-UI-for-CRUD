@@ -1,4 +1,3 @@
-<!-- This code was influenced by the code demonstrated in Lec 20 L03-05 -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,7 +14,6 @@
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-search"></i></label>
             <select class="custom-select" id="fieldSearchSelect">
-			  <!-- This creates the filter search option and indexes to give them values -->
                 <option value="1" selected>Session Date</option>
                 <option value="2">Session Time</option>
 				<option value="3">Clients</option>
@@ -34,7 +32,6 @@
     <table class="table table-hover table-striped" id="sessionsList">
       <thead>
         <tr>  
-		<!-- Table headers-->
           <th style="width: 25%">Session Date</th>
           <th style="width: 25%">Session Time</th>
 		  <th style="width: 25%">Clients</th>
@@ -49,7 +46,6 @@
         </tr>
       </thead>
       <tbody>
-	  <!-- Everytime we make an API call which sends results we render the view and the table with them results and on automatic root call -->
         {{#each results}}
         <tr >
           <td style="width: 25%">{{SessionDate}}</td>
@@ -63,7 +59,6 @@
           <td style="width: 25%">{{IssueFlag}}</td>
 		  <td style="width: 25%">{{SessionNotes}}</td>
           <td class="text-right" style="width: 15%">
-		  <!-- Store the results of the data and store them for later use -->
             <a href="javascript:void(0);" class="btn btn-sm btn-info update" data-id="{{ _id}}" data-date="{{ SessionDate }}" data-time="{{ SessionTime }}" data-clients="{{ Clients }}" data-therapist="{{ Therapist }}" data-fee="{{ Fee}}" data-num="{{ SessionNumber }}" data-duration="{{ SessionDuration}}" data-type="{{ SessionType}}" data-flag="{{ IssueFlag}}" data-notes="{{ SessionNotes}}">Update</a>
             <a href="javascript:void(0);" class="btn btn-sm btn-danger delete" data-id="{{ _id}}" data-date="{{ SessionDate }}" data-time="{{ SessionTime }}" data-clients="{{ Clients }}" data-therapist="{{ Therapist }}" data-fee="{{ Fee }}" data-num="{{ SessionNumber }}" data-duration="{{ SessionDuration}}" data-type="{{ SessionType}}" data-flag="{{ IssueFlag}}" data-notes="{{ SessionNotes}}">Delete</a>
           </td>
@@ -76,7 +71,6 @@
         <button class="btn btn-primary mr-5" data-toggle="modal" data-target="#addModal">Add</button>
         <div class="input-group-prepend">
              <select class="custom-select" id="databaseSearchSelect">
-			 <!-- This sets up the database search options and their dedicated value -->
                 <option value="SessionDate" selected>Session Date</option>
                 <option value="SessionTime">Session Time</option>
 				<option value="Clients">Clients</option>
@@ -106,7 +100,6 @@
                </button>
              </div>
              <div class="modal-body">
-			 <!-- This creates appropriate fields in the Add functionality to create a session -->
                <div class="form-group">
                    <input type="text" name="SessionDate" class="form-control" placeholder="Session Date" required>
                </div>
@@ -158,7 +151,6 @@
               </button>
             </div>
             <div class="modal-body">
-			<!-- This creates appropriate fields in the update functionality to update a session -->
               <div class="form-group">
                    <input type="text" name="SessionDate" class="form-control" placeholder="Session Date" required>
                </div>
@@ -220,7 +212,6 @@
         </div>
     </form>
 
-	<!-- Successful and failed operation popups -->
     <div class="modal fade" id="successAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="alert alert-success" role="alert">
