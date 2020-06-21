@@ -1,4 +1,3 @@
-<!-- This code was influenced by the code demonstrated in Lec 20 L03-05 -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,7 +14,6 @@
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-search"></i></label>
             <select class="custom-select" id="fieldSearchSelect">
-			<!-- This creates the filter search option and indexes to give them values -->
                 <option value="1" selected>Title</option>
                 <option value="2">First Name(s)</option>
 				<option value="3">Surname</option>
@@ -35,7 +33,6 @@
     <table class="table table-hover table-striped" id="therapistsList">
       <thead>
         <tr>  
-		<!-- Table headers-->
           <th style="width: 25%">Title</th>
           <th style="width: 25%">First Name(s)</th>
 		  <th style="width: 25%">Surname</th>
@@ -51,7 +48,6 @@
         </tr>
       </thead>
       <tbody>
-	  <!-- Everytime we make an API call which sends results we render the view and the table with them results and on automatic root call -->
         {{#each results}}
         <tr >
           <td style="width: 25%">{{Title}}</td>
@@ -66,7 +62,6 @@
 		  <td style="width: 25%">{{AddressHome.countyORcity}}</td>
           <td style="width: 25%">{{AddressHome.EIRCODE}}</td>
           <td class="text-right" style="width: 15%">
-		  <!-- Store the results of the data and store them for later use -->
             <a href="javascript:void(0);" class="btn btn-sm btn-info update" data-id="{{ _id}}" data-title="{{ Title }}" data-first="{{ FirstNames }}" data-surname="{{ Surname }}" data-mobile="{{ MobilePhone }}" data-home="{{ HomePhone }}" data-email="{{ Email }}" data-ad1="{{ AddressHome.AddressLine1}}" data-ad2="{{ AddressHome.AddressLine2}}" data-town="{{ AddressHome.Town}}" data-cc="{{ AddressHome.cityORcounty}}" data-e="{{ AddressHome.EIRCODE}}">Update</a>
             <a href="javascript:void(0);" class="btn btn-sm btn-danger delete" data-id="{{ _id }}" data-title="{{ Title }}"  data-first="{{ FirstNames }}" data-surname="{{ Surname }}" data-mobile="{{ MobilePhone }}" data-home="{{ HomePhone }}" data-email="{{ Email }}" data-ad1="{{ AddressHome.AddressLine1}}" data-ad2="{{ AddressHome.AddressLine2}}" data-town="{{ AddressHome.Town}}" data-cc="{{ AddressHome.cityORcounty}}" data-e="{{ AddressHome.EIRCODE}}">Delete</a>
           </td>
@@ -78,7 +73,6 @@
     <div class="input-group mb-3">
         <button class="btn btn-primary mr-5" data-toggle="modal" data-target="#addModal">Add</button>
         <div class="input-group-prepend">
-		<!-- This sets up the database search options and their dedicated value -->
              <select class="custom-select" id="databaseSearchSelect">
                 <option value="Title" selected>Title</option>
                 <option value="FirstNames">First Name(s)</option>
@@ -110,7 +104,6 @@
                </button>
              </div>
              <div class="modal-body">
-			 <!-- This creates appropriate fields in the Add functionality to create a therapist -->
                <div class="form-group">
                    <input type="text" name="Title" class="form-control" placeholder="Title" required>
                </div>
@@ -165,7 +158,6 @@
               </button>
             </div>
             <div class="modal-body">
-			<!-- This creates appropriate fields in the update functionality to update a therapist -->
               <div class="form-group">
                    <input type="text" name="Title" class="form-control" placeholder="Title" required>
                </div>
@@ -230,7 +222,6 @@
         </div>
     </form>
 
-	<!-- Successful and failed operation popups -->
     <div class="modal fade" id="successAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="alert alert-success" role="alert">
