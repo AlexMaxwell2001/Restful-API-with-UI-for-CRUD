@@ -9,6 +9,7 @@ exports.root = (req, res) => {
 
 //The following search functions are used for the database search for the table and rendering the view
 //This function is to search the database by a specified title
+//test
 exports.searchTitle = (req, res) => {
     var search = req.params.s;
     console.log("Searching Title: "+search)
